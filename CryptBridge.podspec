@@ -10,15 +10,17 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/rhvall/CryptBridge.git", :tag => "#{s.version}" }
   s.source_files = '*.{h,m,swift}'
   s.exclude_files = "Exclude"
-  path = "CryptBridgeModuleMap"
-  s.xcconfig = { 'SWIFT_INCLUDE_PATHS[sdk=iphonesimulator*]' => '$(PODS_ROOT)/' + path + '/iphonesimulator/',
-                 'SWIFT_INCLUDE_PATHS[sdk=iphoneos*]' => '$(PODS_ROOT)/' + path + '/iphoneos/' }
+  s.ios.deployment_target = '9.0'
+  # s.osx.deployment_target = '10.9'
+  # s.tvos.deployment_target = '10.1'
+  s.pod_target_xcconfig = {
+    'SWIFT_INCLUDE_PATHS[sdk=macosx*]'           => '$(PODS_ROOT)/CryptBridge/CryptBridgeModuleMap/macosx',
+    'SWIFT_INCLUDE_PATHS[sdk=iphoneos*]'         => '$(PODS_ROOT)/CryptBridge/CryptBridgeModuleMap/iphoneos',
+    'SWIFT_INCLUDE_PATHS[sdk=iphonesimulator*]'  => '$(PODS_ROOT)/CryptBridge/CryptBridgeModuleMap/iphonesimulator',
+    'SWIFT_INCLUDE_PATHS[sdk=appletvos*]'        => '$(PODS_ROOT)/CryptBridge/CryptBridgeModuleMap/appletvos',
+    'SWIFT_INCLUDE_PATHS[sdk=appletvsimulator*]' => '$(PODS_ROOT)/CryptBridge/CryptBridgeModuleMap/appletvsimulator',
+    'SWIFT_INCLUDE_PATHS[sdk=watchos*]'          => '$(PODS_ROOT)/CryptBridge/CryptBridgeModuleMap/watchos',
+    'SWIFT_INCLUDE_PATHS[sdk=watchsimulator*]'   => '$(PODS_ROOT)/CryptBridge/CryptBridgeModuleMap/watchsimulator'
+  }
   s.preserve_paths  = "CryptBridgeModuleMap/*"
-  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '3' }
-  s.prepare_command = <<-CMD
-                          mkdir -p CryptBridgeModuleMap/iphoneos
-                          mkdir -p CryptBridgeModuleMap/iphonesimulator
-                          cp CryptBridgeModuleMap/iphoneos.modulemap CryptBridgeModuleMap/iphoneos/module.modulemap
-                          cp CryptBridgeModuleMap/iphonesimulator.modulemap CryptBridgeModuleMap/iphonesimulator/module.modulemap
-                          CMD
 end

@@ -8,12 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		AC0D841E1EA14FED009E8FE6 /* CryptBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0D841C1EA14FED009E8FE6 /* CryptBridge.swift */; };
-		AC0D84201EA15119009E8FE6 /* CryptBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = AC0D841B1EA14FED009E8FE6 /* CryptBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AC0D84101EA14F56009E8FE6 /* CryptBridge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CryptBridge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AC0D841B1EA14FED009E8FE6 /* CryptBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CryptBridge.h; sourceTree = "<group>"; };
 		AC0D841C1EA14FED009E8FE6 /* CryptBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptBridge.swift; sourceTree = "<group>"; };
 		AC0D841F1EA15000009E8FE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -32,7 +30,6 @@
 		AC0D84061EA14F56009E8FE6 = {
 			isa = PBXGroup;
 			children = (
-				AC0D841B1EA14FED009E8FE6 /* CryptBridge.h */,
 				AC0D841C1EA14FED009E8FE6 /* CryptBridge.swift */,
 				AC0D841F1EA15000009E8FE6 /* Info.plist */,
 				AC0D84111EA14F56009E8FE6 /* Products */,
@@ -54,7 +51,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC0D84201EA15119009E8FE6 /* CryptBridge.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,6 +246,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_INCLUDE_PATHS = "";
+				"SWIFT_INCLUDE_PATHS[sdk=appletvos*]" = "$(PROJECT_DIR)/CryptBridgeModuleMap/appletvos";
+				"SWIFT_INCLUDE_PATHS[sdk=appletvsimulator*]" = "$(PROJECT_DIR)/CryptBridgeModuleMap/appletvsimulator";
 				"SWIFT_INCLUDE_PATHS[sdk=iphoneos*]" = "$(PROJECT_DIR)/CryptBridgeModuleMap/iphoneos";
 				"SWIFT_INCLUDE_PATHS[sdk=iphonesimulator*]" = "$(PROJECT_DIR)/CryptBridgeModuleMap/iphonesimulator";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
