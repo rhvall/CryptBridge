@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   s.summary      = "Common Crypto wrapper to Swift"
   s.description  = "Enable Swift projects to use common crypto functions"
   s.homepage     = "https://github.com/rhvall/CryptBridge.git"
-  s.license      = { :type => "Apache", :file => "FILE_LICENSE" }
+  s.license      = { :type => "Apache", :file => "LICENSE" }
   s.author       = 'rhvall'
   s.platform     = :ios, "9.0"
   s.source       = { :git => "https://github.com/rhvall/CryptBridge.git", :tag => "#{s.version}" }
@@ -22,5 +22,5 @@ Pod::Spec.new do |s|
     'SWIFT_INCLUDE_PATHS[sdk=watchos*]'          => '$(PODS_ROOT)/CryptBridge/CryptBridgeModuleMap/watchos',
     'SWIFT_INCLUDE_PATHS[sdk=watchsimulator*]'   => '$(PODS_ROOT)/CryptBridge/CryptBridgeModuleMap/watchsimulator'
   }
-  s.preserve_paths  = "CryptBridgeModuleMap/*"
+  s.preserve_paths  = "CryptBridgeModuleMap/**/*"
 end
