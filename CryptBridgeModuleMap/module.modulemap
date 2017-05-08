@@ -1,4 +1,4 @@
-module CryptBridgeCommonCrypto [system] {
+module CBCommonCrypto [system] {
     header "/usr/include/CommonCrypto/CommonCrypto.h"
     export *
 }
