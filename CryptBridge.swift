@@ -16,7 +16,7 @@
 //    limitations under the License.
 
 import Foundation
-import CommonCrypto
+import CryptBridgeCommonCrypto
 
 public extension Data {
     public func sha256() -> Data {
