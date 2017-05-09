@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "CryptBridge"
-  s.version      = "0.1.2"
+  s.version      = "0.1.3"
   s.summary      = "Common Crypto wrapper to Swift"
   s.description  = "Enable Swift projects to use common crypto functions"
   s.homepage     = "https://github.com/rhvall/CryptBridge.git"
