@@ -1,4 +1,4 @@
 module CBCommonCrypto [system] {
-    header "../CommonCrypto/CommonCrypto.h"
+    header "CommonCrypto/CommonCrypto.h"
     export *
 }
